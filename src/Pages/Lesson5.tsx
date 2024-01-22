@@ -1,14 +1,23 @@
 import { motion } from "framer-motion";
 
 const parent = {
-  hidden: { scale: 0.9,x:0 },
+  hidden: { opacity: 0, x: 0, y: 0 },
   visible: {
-    x:200,
-    scale: 1,
+    x: [0, 200, -200, 0],
+    y: [0, 200, -200, 0],
+    rotate: [0, 200, -200, 0],
+    opacity: 1,
     transition: {
-      ease: "easeInOut",
-      type: "tween",
+      ease: "linear",
       duration: 2,
+      repeat: Infinity,
+      opacity: {
+        duration: 0.2,
+      },
+      rotate: {
+        delay: 1,
+        repeat: Infinity,
+      },
     },
   },
 };
