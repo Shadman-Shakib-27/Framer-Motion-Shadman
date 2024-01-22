@@ -10,7 +10,7 @@ const child = {
    visible: { opacity: 1, scale: 1 },
  };
  
-const Lesson1 = () => {
+const Lesson12 = () => {
   return (
     <div>
       <motion.div
@@ -22,9 +22,9 @@ const Lesson1 = () => {
           type: "tween",
           duration: 2,
           delayChildren:0.5,
-          staggerChildren:0.5
-          //  repeat: Infinity,
-          //  repeatType: "reverse"
+          staggerChildren:0.5,
+           repeat: Infinity,
+           repeatType: "reverse"
         }}
         className="bg-indigo-500 rounded-lg size-64 flex flex-wrap justify-center items-center gap-5 p-5 "
       >
@@ -37,4 +37,4 @@ const Lesson1 = () => {
   );
 };
 
-export default Lesson1;
+export default Lesson12;
