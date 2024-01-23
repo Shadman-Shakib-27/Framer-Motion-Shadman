@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 const parent = {
   hidden: { opacity: 0, x: 0, y: 0 },
   visible: {
+   // Keyframes
     x: [0, 200, -200, 0],
     y: [0, 200, -200, 0],
     rotate: [0, 200, -200, 0],
@@ -15,7 +16,7 @@ const parent = {
         duration: 0.2,
       },
       rotate: {
-        delay: 1,
+        delay: 2,
         repeat: Infinity,
       },
     },
