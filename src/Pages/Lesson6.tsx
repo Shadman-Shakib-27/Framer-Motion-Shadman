@@ -2,7 +2,7 @@ import { motion, useAnimationControls } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Lesson6 = () => {
-  // useAnimateControlls--> Kono Element Ke Onno Ekta Element Diye Trigger Korate Use Hoy..
+  // useAnimateControlls ()--> Kono Element Ke Onno Ekta Element Diye Trigger Korate Use Hoy..
   const controlls = useAnimationControls();
   const [toggle, setToggle] = useState(false);
 

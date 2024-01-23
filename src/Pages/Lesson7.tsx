@@ -1,49 +1,22 @@
-import { motion, useAnimationControls } from "framer-motion";
-import { useEffect, useState } from "react";
+import { animate, motion, useCycle } from "framer-motion";
 
 const Lesson7 = () => {
-  // useAnimateControlls --> Kono Element Ke Onno Ekta Element Diye Trigger Korate Use Hoy..
-  const controlls = useAnimationControls();
-  const [toggle, setToggle] = useState(false);
+  // UseCycle() --> Amader Ke Toggle Er Moto Kaj Korar Opportunity Dey..
 
-  useEffect(() => {
-    controlls.start((i) => ({ x: 200, transition: { delay: i * 2 } }));
-  }, []);
-
-  //   const handleToggle = () => {
-  //     setToggle(!toggle);
-  //     if (toggle) {
-  //       controlls.start({ x: 200 });
-  //     } else {
-  //       controlls.start({ x: -200 });
-  //     }
-  //   };
+  const boxShadows = [
+    { x: 0, y: 0, opacity: 1 },
+    { x: -100, y: 100, opacity: 0.5 },
+    { x: 100, y: -100, opacity: 0.25 },
+    { x: -100, y: 100, opacity: 0 },
+  ];
+  const [animate, cycle] = useCycle(...boxShadows);
 
   return (
-    <div
-      onMouseEnter={() => controlls.stop()}
-      onMouseLeave={() => controlls.start(() => ({ x: 0 }))}
-      className="border border-red-500 size-[600px] flex flex-col items-center justify-center"
-    >
-      {/* <button
-        onClick={handleToggle}
-        className="bg-green-500 px-3 py-2 rounded-md mb-10 "
-      >
-        Forward
-      </button> */}
+    <div className="border border-red-500 size-[600px] flex flex-col items-center justify-center">
       <motion.div
-        animate={controlls}
-        custom={1}
-        className="bg-indigo-500 rounded-lg size-64 flex flex-col justify-center items-center gap-5 p-5 "
-      ></motion.div>
-      <motion.div
-        animate={controlls}
-        custom={2}
-        className="bg-indigo-500 rounded-lg size-64 flex flex-col justify-center items-center gap-5 p-5 "
-      ></motion.div>
-      <motion.div
-        animate={controlls}
-        custom={3}
+        //   animate={{ x: x }}
+        animate={animate}
+        onTap={() => cycle()}
         className="bg-indigo-500 rounded-lg size-64 flex flex-col justify-center items-center gap-5 p-5 "
       ></motion.div>
     </div>
